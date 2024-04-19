@@ -153,7 +153,7 @@ void logistic_regression(char filename[200], char test_filename[200])
     float *test_targets = get_targets(test_filename);
 
     int test_rows = 0, test_col = 0;
-    calculate_csv_shape("test_breast.csv", &test_rows, &test_col);
+    calculate_csv_shape(test_filename, &test_rows, &test_col);
     char choice = 'y';
     printf("\nDo you want to print predicted values? (y/n)\n");
     getchar();
