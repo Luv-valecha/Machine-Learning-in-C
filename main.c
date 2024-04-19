@@ -26,9 +26,19 @@ int main(){
     typewriter_print("Please enter your training file name: ",60,208);
     char filename[200];
     scanf("%s",filename);
+    FILE* fptr= fopen(filename,"r");
+    if(fptr==NULL){
+        typewriter_print("Train file can't be opened\n",50,197);
+    }
+    fclose(fptr);
     typewriter_print("Please enter your test file name: ",60,208);
     char test_filename[200];
     scanf("%s",test_filename);
+    FILE* fptr= fopen(filename,"r");
+    if(fptr==NULL){
+        typewriter_print("Test file can't be opened\n",50,197);
+    }
+    fclose(fptr);
     typewriter_print("\nPlease select the model to use:\n",60,208);
     typewriter_print("1. Data Scaling\n",60,208);
     typewriter_print("2. Linear Regression\n",60,208);
