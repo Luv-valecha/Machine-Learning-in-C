@@ -499,6 +499,7 @@ struct database
     int character;
 };
 
+
 struct database *create_dataset(int rows, int column)
 {
     struct database *dataset = malloc(rows * sizeof(struct database));
@@ -545,6 +546,7 @@ void data_feeding(FILE *fptr, int rows, int column, struct database *dataset)
     }
 }
 
+//function to calculate euler distanc
 void distance_calculate(int rows, int column, float array[], struct database *dataset)
 {
     for (int i = 0; i < rows; i++)
@@ -558,6 +560,7 @@ void distance_calculate(int rows, int column, float array[], struct database *da
     }
 }
 
+//function to sort database according to the distance 
 void sort_database(int rows, struct database *dataset)
 {
     for (int i = 0; i < rows; i++)
@@ -574,6 +577,7 @@ void sort_database(int rows, struct database *dataset)
     }
 }
 
+//function to check probability of test case
 int check_probability(int k, struct database *dataset)
 {
     int array[3] = {0};
@@ -605,6 +609,7 @@ int check_probability(int k, struct database *dataset)
     return max_prob;
 }
 
+//function to calculate the accuracy of predictions
 void accuracy_knn(int alpha[], int arr[], int row)
 {
     int count = 0;
@@ -616,8 +621,6 @@ void accuracy_knn(int alpha[], int arr[], int row)
         }
     }
 
-    // printf("%d",count);
-
     float percent;
 
     percent = ((float)count / row) * 100;
@@ -625,6 +628,7 @@ void accuracy_knn(int alpha[], int arr[], int row)
     printf("\naccuracy is %f%%", percent);
 }
 
+//main function to implement knn
 void KNN(char filename[200], char filename1[200])
 {
 
@@ -640,6 +644,8 @@ void KNN(char filename[200], char filename1[200])
     int rows = 0, column = 0;
 
     fgets(string, sizeof(string), fptr); // Ignore header line
+
+    //to read data from the csv file
     char *token = strtok(string, ",");
     while (token != NULL)
     {
@@ -647,6 +653,7 @@ void KNN(char filename[200], char filename1[200])
         token = strtok(NULL, ",");
     }
 
+    //to calculate number of rows in the csv file
     while (fgets(string, sizeof(string), fptr) != NULL)
     {
         rows++;
@@ -679,6 +686,7 @@ void KNN(char filename[200], char filename1[200])
 
     fclose(fptr);
 
+    //to open test dataset file
     FILE *fptr1 = fopen(filename1, "r");
 
     if (fptr1 == NULL)
@@ -690,6 +698,8 @@ void KNN(char filename[200], char filename1[200])
     int row = 0, col = 0, p = 0;
 
     fgets(string, sizeof(string), fptr1); // Ignore header line
+
+    //to read data from csv file of test dataset
     token = strtok(string, ",");
     while (token != NULL)
     {
@@ -737,7 +747,7 @@ void KNN(char filename[200], char filename1[200])
         // Calculate accuracy
 
         arr[p++] = check_probability(5, dataset);
-        // printf("%d\n",arr[p]);
+        
     }
     char choice;
     printf("Do you want to print predicted values?: (y/n) ");
