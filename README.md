@@ -108,8 +108,7 @@ to use gnuplot in your code replace the location of gnuplot in model_functions.c
 
 ## contributions
 
-
-- **Dhruv Sharma(b23ci1016)**
 - **Luv Valecha(b23cm1022)**
+- **Dhruv Sharma(b23ci1016)**
 - **Dheeraj Kumar(b23cs1016)**
 - **Adithya Subhash(b23mt1004)**
