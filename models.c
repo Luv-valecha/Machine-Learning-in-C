@@ -3,7 +3,7 @@
 #include <string.h>
 #include <math.h>
 #include <stdbool.h>
-#include "b23cs1016_b23cm1022_b23ci1016_b23mt1004_model_functions.c"
+#include "model_functions.c"
 
 //-------------------------------------------LOGISTIC REGRESSION----------------------------------------------------------
 
