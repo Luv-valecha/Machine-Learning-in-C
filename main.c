@@ -5,7 +5,7 @@
 #include<math.h>
 #include<stdbool.h>
 #include<unistd.h>
-#include"b23cs1016_b23cm1022_b23ci1016_b23mt1004_machine_learning.h"
+#include"machine_learning.h"
 
 void typewriter_print(char *str, unsigned int milliseconds, int colour_code)
 {
