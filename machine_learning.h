@@ -1,6 +1,6 @@
 #ifndef ML
 #define ML
-#include "b23cs1016_b23cm1022_b23ci1016_b23mt1004_models.c"
+#include "models.c"
 
 //----------------------------------------LOGISTIC REGRESSION------------------------------------------------------
 float *initialize_weights(int m);
